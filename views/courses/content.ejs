@@ -1,0 +1,23 @@
+<!<%- include('../partials/header', {active: "Index" }) %>
+
+    <p>
+        <%= course.title %>
+    </p>
+
+    <form action="/courses/new/<%= course._id %>/content" method="post">
+        <div class="form-group">
+            <label for="sectionTitle">section title</label>
+            <input type="text" class="form-control" id="sectionTitle
+                placeholder=" Enter title" name="sectionTitle">
+        </div>
+        <div class="form-group">
+            <label for="description"> description</label>
+            <input type="text" class="form-control" id="description
+                placeholder=" Enter Description" name="description">
+        </div>
+        <!-- <div class="form-group">
+            <label for="course-description">Description</label>
+            <input type="text" class="form-control" id="course-description" placeholder="Description" name="description">
+        </div> -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
