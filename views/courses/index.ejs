@@ -1,0 +1,21 @@
+<!<%- include('../partials/header', {active: "Index" }) %>
+
+
+  <p>Welcome to <%= title %>
+
+  </p>
+  <% courses.forEach(c=> { %>
+    <ul>
+      <a href="/courses/<%= c._id %>">
+        <h3>
+          <%= c.title %>
+        </h3>
+      </a>
+      <%= c.title %>
+        </li>
+        <li>
+          <%= c.user.email %>
+        </li>
+    </ul>
+
+    <% }) %>
