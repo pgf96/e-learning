@@ -1,6 +1,14 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+const contentSchema = new Schema({
+    sectionTitle: {type: String},
+    description: {type: String},
+    file: {type: String},
+}, {
+    timestamps: true
+})
+
 const courseSchema = new Schema({
     title:{
         type: String,
@@ -8,6 +16,7 @@ const courseSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId, ref: 'User'
     },
+    contents: [contentSchema]
 
 }, {
     timestamps: true
