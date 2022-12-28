@@ -10,11 +10,14 @@
         <li>
             user: <%= course.user.createdAt %>
         </li>
+        <!-- for each loop to display section(s) in contents -->
         <li>
-            content: <%= course.contents[0].createdAt %>
-
+            content: <%= course.contents[0].sectionTitle %>
         </li>
         <li>
-
+            content: <%= course.contents[0].description %>
         </li>
     </ul>
+
+
+    <%- include('../partials/footer') %>

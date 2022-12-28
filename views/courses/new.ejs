@@ -1,4 +1,4 @@
-<%- include('../partials/header', {active: "" }) %>
+<%- include('../partials/header', {active: "User" }) %>
 
     <form action="/courses" method="post">
         <div class="form-group">
@@ -7,9 +7,12 @@
                 placeholder="Enter Title" name="title">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
-        <!-- <div class="form-group">
+        <div class="form-group">
             <label for="course-description">Description</label>
-            <input type="text" class="form-control" id="course-description" placeholder="Description" name="description">
-        </div> -->
+            <input type="text" class="form-control" id="course-description" placeholder="Description"
+                name="description">
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    <%- include('../partials/footer') %>
