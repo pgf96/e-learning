@@ -5,7 +5,12 @@
             title: <%= course.title %>
         </li>
         <li>
-            user: <%= course.user.createdAt %>
+            created user: <%= course.user._id %>
+                email: <%= course.user.email %>
+        </li>
+        <li>
+            logged in user: <%= user._id %>
+                email: <%= user.email %>
         </li>
         <!-- for each loop to display section(s) in contents -->
 
@@ -24,11 +29,13 @@
                         <h4>no content added</h4>
                         <% } %>
     </ul>
-    <p>
-    <form action="/courses/<%= course._id %>?_method=DELETE" method="POST">
-        <button type="submit"> X </button>
-    </form>
-    </p>
+    <% if (user && course.user._id.equals(user._id)) { %>
+        <p>
+        <form action="/courses/<%= course._id %>?_method=DELETE" method="POST">
+            <button type="submit"> X </button>
+        </form>
+        </p>
+        <% } %>
 
 
-    <%- include('../partials/footer') %>
+            <%- include('../partials/footer') %>
