@@ -5,7 +5,7 @@ const index = (req,res) => {
     Course.find({})
     .populate('user')
     .exec(function(err, courses) {
-        res.render('courses/index', { title: 'all courses', courses})
+        res.render('courses/index', { title: 'all courses', courses,})
     })
 }
 
@@ -18,7 +18,6 @@ const show = (req,res) => {
     Course.findById(req.params.id)
     .populate('user')
     .exec((err, course) => {
-        console.log(course)
         res.render('courses/show', {title: 'show page', course})
     })
     
@@ -38,7 +37,14 @@ const create = (req,res) => {
 const createContent = (req,res) => {
     Course.findById(req.params.id, (err, course) => {
         console.log(req.body)
-        course.contents.push(req.body)
+        const output = req.body.sectionTitle.map((sectionTitle, index) => ({
+            sectionTitle,
+            description: req.body.description[index]
+          }));
+        output.forEach(content => {
+            course.contents.push(content)
+            console.log(content)
+        })
         course.save(err => {
             res.redirect('/courses')
         })
@@ -47,12 +53,18 @@ const createContent = (req,res) => {
 }
 
 const newContent = (req,res) => {
-    console.log(req.params.id)
     Course.findById(req.params.id, (err, course) => {
         res.render('courses/content', {title: course.title, course})
     })
 }
 
+const deleteCourse = (req, res) => {
+    Course.deleteOne({_id: req.params.id})
+    .then(() => {
+        console.log(req.params.id)
+        res.redirect('/courses')
+    })
+}
 
 
 // to delete
@@ -74,4 +86,5 @@ module.exports = {
     newContent, 
     createContent,
     show,
+    delete: deleteCourse,
 }

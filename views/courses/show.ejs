@@ -1,8 +1,5 @@
 <!<%- include('../partials/header', {active: "" }) %>
 
-
-    <p> this is the show page</p>
-
     <ul>
         <li>
             title: <%= course.title %>
@@ -11,13 +8,27 @@
             user: <%= course.user.createdAt %>
         </li>
         <!-- for each loop to display section(s) in contents -->
-        <li>
-            content: <%= course.contents[0].sectionTitle %>
-        </li>
-        <li>
-            content: <%= course.contents[0].description %>
-        </li>
+
+
+        <% if (course.contents.length) { %>
+            <% course.contents.forEach(function(con) { %>
+                <h3>title </h3>
+                <li>
+                    description: <%= con.description %>
+                </li>
+                <li>
+                    content: <%= con.sectionTitle %>
+                </li>
+                <% }) %>
+                    <% } else { %>
+                        <h4>no content added</h4>
+                        <% } %>
     </ul>
+    <p>
+    <form action="/courses/<%= course._id %>?_method=DELETE" method="POST">
+        <button type="submit"> X </button>
+    </form>
+    </p>
 
 
     <%- include('../partials/footer') %>
