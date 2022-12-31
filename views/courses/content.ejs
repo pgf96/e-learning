@@ -5,19 +5,40 @@
     </p>
 
     <form action="/courses/new/<%= course._id %>/content" method="post">
-        <div class="form-group">
-            <label for="sectionTitle">section title</label>
-            <input type="text" class="form-control" id="sectionTitle
-                placeholder=" Enter title" name="sectionTitle">
+        <div class="sectionList">
+            <div class="sectionDiv">
+                <div class="form-group">
+                    <label for="sectionTitle">section title</label>
+                    <input type="text" class="form-control" id="sectionTitle
+            placeholder=" Enter title" name="sectionTitle">
+                </div>
+                <div class="form-group">
+                    <label for="description"> description</label>
+                    <input type="text" class="form-control" id="description
+            placeholder=" Enter Description" name="description">
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="description"> description</label>
-            <input type="text" class="form-control" id="description
-                placeholder=" Enter Description" name="description">
-        </div>
-        <!-- <div class="form-group">
-            <label for="course-description">Description</label>
-            <input type="text" class="form-control" id="course-description" placeholder="Description" name="description">
-        </div> -->
+        <button type="button" class="btn btn-outline-primary" id="addSectionBtn">+ Section</button>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    <script>
+        let addSectionBtn = document.getElementById('addSectionBtn');
+        let sectionList = document.querySelector('.sectionList');
+        let sectionDiv = document.querySelectorAll('.sectionDiv')[0];
+
+        addSectionBtn.addEventListener('click', function () {
+            let newSections = sectionDiv.cloneNode(true);
+            newSections.getElementsByTagName('input')[0].value = ''
+            newSections.getElementsByTagName('input')[1].value = ''
+            // let input = newIngredients.getElementsByTagName('input')[0];
+            // input.value = '';
+            // let input1 = newIngredients.getElementsByTagName('input')[1];
+            // input1.value = '';
+            sectionList.appendChild(newSections);
+        });
+
+    </script>
+
+    <%- include('../partials/footer') %>
