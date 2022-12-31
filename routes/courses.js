@@ -8,7 +8,10 @@ router.get('/', coursesCtrl.index)
 router.get('/users', coursesCtrl.user)
 router.get('/new', coursesCtrl.new)
 router.get('/new/:id/content', coursesCtrl.newContent)
+
 router.get('/:id', coursesCtrl.show)
+
+router.delete('/:id', coursesCtrl.delete)
 
 router.post('/', coursesCtrl.create)
 router.post('/new/:id/content', coursesCtrl.createContent)
