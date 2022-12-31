@@ -8,7 +8,7 @@ const index = (req,res) => {
         res.render('courses/index', { title: 'all courses', courses,})
     })
 }
-
+  
 const newCourse = (req,res) => {
     res.render('courses/new', {title: 'add a course'})
 
@@ -37,17 +37,23 @@ const create = (req,res) => {
 const createContent = (req,res) => {
     Course.findById(req.params.id, (err, course) => {
         console.log(req.body)
-        const output = req.body.sectionTitle.map((sectionTitle, index) => ({
-            sectionTitle,
-            description: req.body.description[index]
-          }));
-        output.forEach(content => {
-            course.contents.push(content)
-            console.log(content)
-        })
-        course.save(err => {
-            res.redirect('/courses')
-        })
+        if (!Array.isArray(req.body.sectionTitle)) {
+            course.contents.push(req.body)
+            course.save()
+            return res.redirect('/courses')
+        } else {
+            const output = req.body.sectionTitle.map((sectionTitle, index) => ({
+                sectionTitle,
+                description: req.body.description[index]
+              }));
+            output.forEach(content => {
+                course.contents.push(content)
+                console.log(content)
+            })
+            course.save(err => {
+                res.redirect('/courses')
+            })
+        }
         
     })
 }
