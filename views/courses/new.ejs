@@ -1,17 +1,50 @@
-<%- include('../partials/header', {active: "User" }) %>
-
-    <form action="/courses" method="post">
-        <div class="form-group">
-            <label for="course-title">Title</label>
-            <input type="text" class="form-control" id="course-title" aria-describedby="emailHelp"
-                placeholder="Enter Title" name="title">
-        </div>
-        <div class="form-group">
-            <label for="course-description">Description</label>
-            <input type="text" class="form-control" id="course-description" placeholder="Description"
-                name="description">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
-    <%- include('../partials/footer') %>
+<%- include('../partials/header', {active: "New" }) %>
+<h1>Begin with a title</h1>
+<p class="title-message">we can always change this later</p>
+<div class="creating-course-container">
+  <form action="/courses" method="post">
+    <div class="form-group">
+      <!-- <label for="course-title">Title</label> -->
+      <input
+        type="text"
+        class="form-control"
+        id="course-title"
+        aria-describedby="emailHelp"
+        placeholder="e.g. How I Would Learn To Code (If I Could Start Over) "
+        name="title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="course-description">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="course-description"
+        placeholder="Description"
+        name="description"
+      />
+    </div>
+    <div class="form-group">
+      <label for="test">test</label>
+      <input
+        type="text"
+        class="form-control"
+        id="course-what-you-will-learn"
+        placeholder="what youll Learn"
+        name="outcomes"
+      />
+    </div>
+    <div class="form-group">
+      <label for="test">test</label>
+      <input
+        type="text"
+        class="form-control"
+        id="course-what-you-will-learn"
+        placeholder="what youll Learn"
+        name="outcomes"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<%- include('../partials/footer') %>
