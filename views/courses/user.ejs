@@ -1,23 +1,21 @@
 <!<%- include('../partials/header', {active: "User" }) %>
 
-    <table id="list">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Release<br>Year</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <% users.forEach(function(u) { %>
-                <tr>
-                    <td>
-                        <%= u.name %>
-                    </td>
-                    <td>
-                        <%= u.email %>
-                    </td>
-                </tr>
-                <% }); %>
-        </tbody>
-    </table>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Release<br />Year</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(function(u) { %>
+    <tr>
+      <td><%= u.name %></td>
+      <td><%= u.email %></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>
