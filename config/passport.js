@@ -12,7 +12,7 @@ passport.use(new GoogleStrategy({
         // opt 1) save a new user to our database
         // opt 2) find an existing user from our database
         // once the user is found/created - passport adds them to a new session (login to OUR site)
-        console.log(profile);
+        // console.log(profile);
         User.findOne({googleId: profile.id}, function(err, user) {
             
             if(user) return cb(err, user);
