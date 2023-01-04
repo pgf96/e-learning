@@ -1,10 +1,10 @@
 <%- include('../partials/header', {active: "New" }) %>
-<h1>Begin with a title</h1>
-<p class="title-message">we can always change this later</p>
+<h1>Let's start with the basics</h1>
+<p class="title-message">You can always change this later</p>
 <div class="creating-course-container">
   <form action="/courses" method="post">
     <div class="form-group">
-      <!-- <label for="course-title">Title</label> -->
+      <label for="course-title">Title</label>
       <input
         type="text"
         class="form-control"
@@ -24,27 +24,41 @@
         name="description"
       />
     </div>
-    <div class="form-group">
-      <label for="test">test</label>
-      <input
-        type="text"
-        class="form-control"
-        id="course-what-you-will-learn"
-        placeholder="what youll Learn"
-        name="outcomes"
-      />
+    <div class="form-group" id="learning-objectives">
+      <label> 3 </label>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          id="course-what-you-will-learn"
+          placeholder="Music business and entrepreneurship, including topics such as how to promote and sell music, and how to build a career in the music industry"
+          name="outcomes"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          id="course-what-you-will-learn"
+          placeholder="Music theory, including concepts such as scales, chords, melody, and harmony"
+          name="outcomes"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          id="course-what-you-will-learn"
+          placeholder="Instrument-specific techniques and repertoire, such as how to play a particular instrument or sing in a particular style"
+          name="outcomes"
+        />
+      </div>
     </div>
-    <div class="form-group">
-      <label for="test">test</label>
-      <input
-        type="text"
-        class="form-control"
-        id="course-what-you-will-learn"
-        placeholder="what youll Learn"
-        name="outcomes"
-      />
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary bg-secondary" disabled>
+      Add Learning Objective
+    </button>
+    <button type="submit" class="btn btn-primary" id="test">Continue</button>
   </form>
 </div>
+
 <%- include('../partials/footer') %>
