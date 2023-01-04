@@ -1,8 +1,135 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #424748;
 }
 
 a {
   color: #00B7FF;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "nav"
+    "main"
+}
+
+body>nav {
+  grid-area: nav;
+  background-color: #B8C0C2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+body>main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E8ECEB;
+  padding: 0px;
+  overflow-y: scroll;
+}
+
+.sectionDiv {
+  padding: 10px;
+  margin-bottom: 13px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.creating-course-container {
+  min-width: 120rem;
+  padding: 10px 400px 10px;
+}
+
+.form-group>label {
+  padding-left: 3px;
+}
+
+#learning-objectives>.form-group {
+  margin-bottom: 6px;
+}
+
+p.title-message {
+  font-size: 10px;
+}
+
+.banner {
+  background-color: rgba(12, 52, 131, 0.945);
+  margin-bottom: 30px;
+}
+
+#test {
+  float: right;
+}
+
+.banner>.container>.row {
+  padding: 10px 0px;
+  min-height: 250px;
+}
+
+.banner>.container>.row>.col>* {
+  line-height: 100%;
+}
+
+.banner>.container>.row h1 {
+  color: rgb(255, 255, 255);
+}
+
+.banner>.container>.row ul {
+  padding-left: 0px;
+}
+
+.banner>.container>.row li {
+  display: inline;
+  color: rgb(255, 255, 255);
+}
+
+.bi-person {
+  color: white;
+  padding-right: 10px;
+}
+
+.bi-globe-americas {
+  padding-right: 10px;
+  color: white;
+}
+
+.banner>.container>.row li:not(:last-child):after {
+  content: "|";
+}
+
+.btn-outline-success {
+  margin-right: 15px;
+}
+
+nav {
+  margin-left: 7px;
+  
+}
+
+/* accordion */
+/* .accordion>li {
+  white-space: normal;
+} */
+
+
+
+
+
+/* 
+column row css
+*/
+.col-9 {
+  min-height: 450px;
+}
+
+.collapse test {
+  background-color: inherit;
 }
