@@ -1,5 +1,4 @@
-<!<%- include('../partials/header', {active: "Index" }) %>
-
+<%- include('../partials/header', {active: "New" }) %>
 
   <p>Welcome to <%= title %>
 
@@ -13,9 +12,8 @@
       </a>
       <%= c.title %>
         </li>
-        <li>
-          <%= c.user.email %>
-        </li>
     </ul>
 
     <% }) %>
+
+      <%- include('../partials/footer') %>
