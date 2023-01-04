@@ -1,41 +1,113 @@
 <!<%- include('../partials/header', {active: "" }) %>
 
-    <ul>
-        <li>
-            title: <%= course.title %>
-        </li>
-        <li>
-            created user: <%= course.user._id %>
-                email: <%= course.user.email %>
-        </li>
-        <li>
-            logged in user: <%= user._id %>
-                email: <%= user.email %>
-        </li>
-        <!-- for each loop to display section(s) in contents -->
+<div class="container-fluid banner">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>
+                    <%= course.title %>
+                </h1>
+                <ul>
+                    <li>
+                        <i class="bi bi-person"></i>
+                        <%= course.user.name %>
+                    </li>
+                    <li>
+                        <i class="bi bi-globe-americas"></i>
+                        English
+                    </li>
+                    <li>Cras justo odio</li>
+                </ul>
+            </div>
+            <!-- <div class="col">
+    2 of 2
+</div> -->
+        </div>
+    </div>
+</div>
 
 
-        <% if (course.contents.length) { %>
-            <% course.contents.forEach(function(con) { %>
-                <h3>title </h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h3>what you'll Learn</h3>
+            <ul>
+                <% course.outcomes.forEach(function(outcome) { %>
+                    <li>
+                        <%= outcome %>
+                    </li>
+                    <% }) %>
+            </ul>
+        </div>
+        <div class="col-9">
+            <ul>
                 <li>
-                    description: <%= con.description %>
+                    title: <%= course.title %>
                 </li>
                 <li>
-                    content: <%= con.sectionTitle %>
+                    created user: <%= course.user._id %>
+                        email: <%= course.user.email %>
                 </li>
-                <% }) %>
+                <li>
+                    logged in user: <%= user._id %>
+                        email: <%= user.email %>
+                </li>
+            </ul>
+            <% if (user && course.user._id.equals(user._id)) { %>
+                <p>
+                <form action="/courses/<%= course._id %>?_method=DELETE" method="POST">
+                    <button type="submit"> X </button>
+                </form>
+                </p>
+                <% } %>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
+            <% if (course.contents.length) { %>
+            <% let i=1; %>
+                    <div class="accordion" id="accordionExample">
+                    <% course.contents.forEach(function(con) { %>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading<%=i %>">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse<%=i %>" aria-expanded="false"
+                                        aria-controls="collapse<%=i %>">
+                                        <%=i %> . <%=con.sectionTitle %>
+                                    </button>
+                                </h2>
+                                <div id="collapse<%=i %>" class="accordion-collapse collapse"
+                                    aria-labelledby="heading<%=i %>" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <p>
+                                                description: <%= con.description %>
+                                            </p>
+                                            <li>
+                                                description: <%= con.description %>
+                                            </li>
+                                            <li>
+                                                content: <%= con.sectionTitle %>
+                                            </li>
+                                            <div> <%- con.body %>   </div> 
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <% i++ %>
+                                <% }) %>
+                    </div>
                     <% } else { %>
                         <h4>no content added</h4>
                         <% } %>
-    </ul>
-    <% if (user && course.user._id.equals(user._id)) { %>
-        <p>
-        <form action="/courses/<%= course._id %>?_method=DELETE" method="POST">
-            <button type="submit"> X </button>
-        </form>
-        </p>
-        <% } %>
+        </div>
+    </div>
+</div>
 
 
-            <%- include('../partials/footer') %>
+
+
+
+<%- include('../partials/footer') %>
