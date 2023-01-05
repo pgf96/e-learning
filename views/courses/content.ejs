@@ -1,44 +1,60 @@
-<!<%- include('../partials/header', {active: "Index" }) %>
+<!-- Include TinyMCE script -->
+<%- include('../scripts/addSection') %>
+<!<%- include('../partials/header', {active: "New" }) %>
 
-    <p>
-        <%= course.title %>
-    </p>
-
-    <form action="/courses/new/<%= course._id %>/content" method="post">
-        <div class="sectionList">
-            <div class="sectionDiv">
-                <div class="form-group">
-                    <label for="sectionTitle">section title</label>
-                    <input type="text" class="form-control" id="sectionTitle
-            placeholder=" Enter title" name="sectionTitle">
-                </div>
-                <div class="form-group">
-                    <label for="description"> description</label>
-                    <input type="text" class="form-control" id="description
-            placeholder=" Enter Description" name="description">
-                </div>
-            </div>
+<h1>Now let's add some sections for: <strong> <%= course.title %></strong></h1>
+<div class="creating-course-container">
+  <form action="/courses/new/<%= course._id %>/content" method="post">
+    <div class="sectionList">
+      <div class="sectionDiv">
+        <div class="form-group">
+          <label for="sectionTitle">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="sectionTitle"
+            placeholder="Enter title"
+            name="sectionTitle"
+          />
         </div>
-        <button type="button" class="btn btn-outline-primary" id="addSectionBtn">+ Section</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+        <div class="form-group">
+          <label for="Description"> Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            placeholder="Enter Description"
+            name="description"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="form-group" id="textarea-container-0">
+          <label>Information</label>
+          <textarea class="form-control" name="body">
+            <h1>Lets start with a heading here</h1>
+            <p>Then you can start displaying your information anyway you like.</p>
+            <p></p>
+            <p>what <strong style="background-color: yellow;"> you see</strong > is what <strong style="background-color: yellow;">you get!</strong> <p>
+            <p>on the bottom right of this toolbar you can drag and resize </p>
+            <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: darkolivegreen;"> If you already have an HTML ready to go click <u><strong>Tools</strong> </u>  and then click <u><strong>Source code</strong></u>  </p>
+            <p style="text-align: center;">Be sure to explore the toolbar!</p>
+          </textarea>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-outline-primary" id="addSectionBtn">
+      + Section
+    </button>
+    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+  </form>
+</div>
 
-    <script>
-        let addSectionBtn = document.getElementById('addSectionBtn');
-        let sectionList = document.querySelector('.sectionList');
-        let sectionDiv = document.querySelectorAll('.sectionDiv')[0];
+<%- include('../partials/footer') %>
 
-        addSectionBtn.addEventListener('click', function () {
-            let newSections = sectionDiv.cloneNode(true);
-            newSections.getElementsByTagName('input')[0].value = ''
-            newSections.getElementsByTagName('input')[1].value = ''
-            // let input = newIngredients.getElementsByTagName('input')[0];
-            // input.value = '';
-            // let input1 = newIngredients.getElementsByTagName('input')[1];
-            // input1.value = '';
-            sectionList.appendChild(newSections);
-        });
-
-    </script>
-
-    <%- include('../partials/footer') %>
+<!-- upgrade to bootstrap 5 and adjust -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>

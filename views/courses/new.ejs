@@ -10,28 +10,38 @@
         class="form-control"
         id="course-title"
         aria-describedby="emailHelp"
-        placeholder="e.g. How I Would Learn To Code (If I Could Start Over) "
+        placeholder="Tune Up Your Music Skills "
         name="title"
       />
     </div>
     <div class="form-group">
-      <label for="course-description">Description</label>
+      <label for="course-welcome-message">Welcome Message</label>
       <input
         type="text"
         class="form-control"
-        id="course-description"
-        placeholder="Description"
-        name="description"
+        id="course-welcome-message"
+        placeholder="blurb "
+        name="welcomeMessage"
       />
     </div>
+    <div class="form-group">
+      <label for="course-description">Description</label>
+      <textarea
+        class="form-control"
+        placeholder="This course is an introduction to music theory and history, designed specifically for online learning."
+        id="course-description"
+        name="description"
+        style="height: 100px"
+      ></textarea>
+    </div>
     <div class="form-group" id="learning-objectives">
-      <label> 3 </label>
+      <label> Learning Objectives </label>
       <div class="form-group">
         <input
           type="text"
           class="form-control"
           id="course-what-you-will-learn"
-          placeholder="Music business and entrepreneurship, including topics such as how to promote and sell music, and how to build a career in the music industry"
+          placeholder="Ex. Music business and entrepreneurship, including topics such as how to promote and sell music, and how to build a career in the music industry"
           name="outcomes"
         />
       </div>
@@ -40,7 +50,7 @@
           type="text"
           class="form-control"
           id="course-what-you-will-learn"
-          placeholder="Music theory, including concepts such as scales, chords, melody, and harmony"
+          placeholder="If you're reading this you lost the game."
           name="outcomes"
         />
       </div>
@@ -57,8 +67,16 @@
     <button type="submit" class="btn btn-primary bg-secondary" disabled>
       Add Learning Objective
     </button>
-    <button type="submit" class="btn btn-primary" id="test">Continue</button>
+    <button type="submit" class="btn btn-primary" id="submit">Continue</button>
   </form>
 </div>
 
 <%- include('../partials/footer') %>
+
+<!-- upgrade to bootstrap 5 and adjust -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
