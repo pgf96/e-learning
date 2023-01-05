@@ -23,7 +23,9 @@ addSectionBtn.addEventListener("click", function () {
   sectionList.appendChild(newSections)
   tinymce.init({
     selector: "textarea",
-    plugins: "lists link image table code help wordcount",
+    plugins: "lists link image table code help wordcount bulllist",
     height: 539,
+    promotion: false,
+    branding: false,
   })
 })
