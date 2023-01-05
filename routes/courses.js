@@ -1,22 +1,20 @@
-var express = require("express")
-var router = express.Router()
+const express = require("express")
+const router = express.Router()
 const coursesCtrl = require("../controllers/courses")
-// const isLoggedIn = require('../config/auth')
+const isLoggedIn = require("../config/auth")
 
-// GET /movies - show all movied
 router.get("/", coursesCtrl.index)
-router.get("/users", coursesCtrl.user)
-router.get("/new", coursesCtrl.new)
+router.get("/new", isLoggedIn, coursesCtrl.new)
 router.get("/new/:id/content", coursesCtrl.newContent)
 
-router.get("/:id", coursesCtrl.show)
+router.get("/:id", isLoggedIn, coursesCtrl.show)
 
-router.put("/:id/edit", coursesCtrl.edit)
-// router.put('/:id', coursesCtrl.update)
+router.get("/:id/edit", isLoggedIn, coursesCtrl.edit)
+router.put("/:id", isLoggedIn, coursesCtrl.update)
 
-router.delete("/:id", coursesCtrl.delete)
+router.delete("/:id", isLoggedIn, coursesCtrl.delete)
 
-router.post("/", coursesCtrl.create)
-router.post("/new/:id/content", coursesCtrl.createContent)
+router.post("/", isLoggedIn, coursesCtrl.create)
+router.post("/new/:id/content", isLoggedIn, coursesCtrl.createContent)
 
 module.exports = router
