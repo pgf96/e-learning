@@ -57,13 +57,6 @@
                 </li>   
 
             </ul>
-            <% if (user && course.user._id.equals(user._id)) { %>
-                <p>
-                <form action="/courses/<%= course._id %>?_method=DELETE" method="POST">
-                    <button type="submit"> X </button>
-                </form>
-                </p>
-                <% } %>
         </div>
     </div>
 
@@ -114,8 +107,20 @@
     </div>
 </div>
 
+<% if (user && course.user._id.equals(user._id)) { %>
+<div class="d-flex p-3">
+    <form class="p-1"action="/courses/<%= course._id %>?_method=DELETE" method="POST">
+        <button type="submit"> delete </button>
+    </form>
+        <% } %>
+    <% if (user && course.user._id.equals(user._id)) { %>
+    <form class="p-1" action="/courses/<%= course._id %>/edit" method="get">
+        <button type="submit"> edit </button>
+    </form>
+    <% } %>
+</div>
+
 
 
 <%- include('../partials/footer') %>
 
-src
