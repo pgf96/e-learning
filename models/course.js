@@ -22,6 +22,9 @@ const courseSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "User",
     },
+    welcomeMessage: {
+      type: String,
+    },
     description: {
       type: String,
     },
