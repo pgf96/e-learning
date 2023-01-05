@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bootstrap-icons": "^1.10.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
@@ -19,6 +20,7 @@
     "nodemon": "^2.0.20",
     "passport": "^0.6.0",
     "passport-google-oauth": "^2.0.0",
-    "session": "^0.1.0"
+    "session": "^0.1.0",
+    "tinymce": "^6.3.1"
   }
 }
