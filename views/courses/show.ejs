@@ -1,8 +1,8 @@
 <!<%- include('../partials/header', {active: "" }) %>
-<%- include('../scripts/accordionScroll') %>
+
 
 <div class="container-fluid banner">
-    <div class="container">
+    <div class="container banner-container">
         <div class="row">
             <div class="col">
                 <h1>
@@ -18,10 +18,11 @@
                     </li>
                 </ul>
             </div>
-            <!-- <div class="col">
-    2 of 2
-</div> -->
+            <p><%= course.welcomeMessage %></p>
+            <p><%= course.user.createdAt %></p>
+            <p><%= course.user.createdAt %></p>
         </div>
+
     </div>
 </div>
 
@@ -30,7 +31,7 @@
 <div class="container">
     <div class="row">
         <div class="col-3">
-            <h3>what you'll Learn</h3>
+            <h3>Outcomes</h3>
             <ul>
                 <% course.outcomes.forEach(function(outcome) { %>
                     <li>
@@ -41,6 +42,8 @@
         </div>
         <div class="col-9">
             <ul>
+                <h3>Description</h3>
+                <p id="description"> <%= course.description %></p>
                 <li>
                     title: <%= course.title %>
                 </li>
@@ -51,7 +54,8 @@
                 <li>
                     logged in user: <%= user._id %>
                         email: <%= user.email %>
-                </li>
+                </li>   
+
             </ul>
             <% if (user && course.user._id.equals(user._id)) { %>
                 <p>
@@ -62,12 +66,17 @@
                 <% } %>
         </div>
     </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-4 border-bottom border-2 border-dark" style="--bs-border-opacity: .12;"></div>
+    </div>
     
     <div class="row">
         <div class="col">
             <% if (course.contents.length) { %>
             <% let i=1; %>
                     <div class="accordion" id="accordionExample">
+                        <h3>Content</h3>
                     <% course.contents.forEach(function(con) { %>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="heading<%=i %>">
@@ -99,7 +108,7 @@
                                 <% }) %>
                     </div>
                     <% } else { %>
-                        <h4>no content added</h4>
+                        <h4>no content added</h4> </div>
                         <% } %>
         </div>
     </div>
@@ -107,6 +116,6 @@
 
 
 
-
-
 <%- include('../partials/footer') %>
+
+src
