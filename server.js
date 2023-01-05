@@ -25,6 +25,11 @@ app.set("view engine", "ejs")
 app.use(logger("dev"))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use(
+  "/tinymce",
+  express.static(path.join(__dirname, "node_modules", "tinymce"))
+)
+app.use(express.static(path.join(__dirname, "public")))
 app.use(cookieParser())
 app.use(cookieParser())
 app.use(methodOverride("_method"))
@@ -43,11 +48,6 @@ app.use(function (req, res, next) {
   res.locals.user = req.user
   next()
 })
-app.use(
-  "/tinymce",
-  express.static(path.join(__dirname, "node_modules", "tinymce"))
-)
-app.use(express.static(path.join(__dirname, "public")))
 
 app.use("/", indexRouter)
 app.use("/courses", coursesRouter)
