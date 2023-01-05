@@ -57,6 +57,7 @@ const createContent = (req, res) => {
 
 const newContent = (req, res) => {
   Course.findById(req.params.id, (err, course) => {
+    if (err) console.log(err)
     res.render("courses/content", { title: course.title, course })
   })
 }
@@ -68,20 +69,30 @@ const deleteCourse = (req, res) => {
   })
 }
 
-// to delete
-const user = (req, res) => {
-  User.find({}, (err, users) => {
-    res.render("courses/user", { title: "users", users })
+const edit = (req, res) => {
+  Course.findById(req.params.id, (err, course) => {
+    if (err) console.log(err)
+    res.render("courses/edit", { course })
+  })
+}
+
+const update = (req, res) => {
+  console.log(req.params.id)
+  console.log(req.body)
+  Course.updateOne({ _id: req.params.id }, req.body, (err) => {
+    if (err) console.log(err)
+    res.redirect(`/courses/${req.params.id}`)
   })
 }
 
 module.exports = {
   index,
-  user,
   new: newCourse,
   create,
   newContent,
   createContent,
   show,
   delete: deleteCourse,
+  edit,
+  update,
 }
