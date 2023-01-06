@@ -4,8 +4,8 @@
 ## Description
 > Online learning and teaching service that allows anyone to take or host courses in a variety of different subjects. It allows anyone to learn at their own pace.
 
-![](/images/add-course.jpg)
-![](/images/sample-course.jpg)
+![](public/images/add-course.jpg)
+![](public/images/sample-course.jpg)
 
 ## Built with
 Expressjs, MongoDB, Bootstrap, JavaScript, HTML, CSS, TinyMCE, Google Authentication
