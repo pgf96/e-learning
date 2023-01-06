@@ -5,7 +5,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: Helvetica;
+  font-family: 'Hind', sans-serif;
   color: #424748;
 }
 
@@ -40,7 +40,6 @@ nav>div {
   margin: 0px 25px 0px 10px;
 }
 
-
 body>main {
   grid-area: main;
   display: flex;
@@ -58,8 +57,6 @@ main>*:nth-last-child(2) {
 main > h1 {
   padding-top: 10px;
 }
-
-
 
 .sectionDiv {
   padding: 10px;
@@ -79,33 +76,73 @@ main > h1 {
 }
 
 .form-control::-webkit-input-placeholder {
-  color: #bbb;
+  color: rgb(135, 119, 119);
 }
-
 
 #learning-objectives>.form-group {
   margin-bottom: 6px;
 }
 
 p.title-message {
-  font-size: 10px;
+  font-size: 14px;
 }
-
-
 
 /* new-ejs ------------- end*/
 
-
-
 #submit {
   float: right;
+}
+
+/* home banner */
+main>.banner-home {
+  background-color: #f3f3ef;
+  min-height: 1000px;
+}
+
+.banner-home>.container>.row:not(#banner-home-buttons) {
+  min-height: 350px;
+  /* border: solid white 2px; */
+}
+.banner-home>.container>.row#banner-home-buttons {
+  height: 100px;
+  /* border: solid white 2px; */
+}
+
+#banner-home-button {
+  background-color: rgb(224, 150, 150);
+  border: none;
+}
+
+.banner-home>.container>.row h1 {
+  text-shadow: 5px 5px 10px #b4b4b4;
+  font-weight: 700;
+  font-size: 69px;
+}
+
+.banner-home>.container>.row h5 {
+  text-align: left;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.banner-home>.container>.row img {
+  margin-top: 95px;
+  width: 90%;
+  border: 0px;
+  border-radius: 3px 60px / 60px;
+  background-color: rgb(186, 200, 182);
+  mix-blend-mode: multiply
 }
 
 .banner>.container>.row {
   padding: 10px 0px;
   min-height: 250px;
 }
+
+
 /* 98947D */
+
+
 main>.banner {
   background-color: rgb(152, 148, 125);
   padding-top: 0px;
@@ -117,6 +154,9 @@ main>.banner {
 }
 
 .banner>.container>.row h1 {
+  color: rgb(255, 255, 255);
+}
+.banner>.container>.row h5 {
   color: rgb(255, 255, 255);
 }
 
@@ -153,8 +193,19 @@ p#description {
   white-space: pre-wrap;
 }
 
+.container#course-list {
+  margin-top: 100px;
+
+}
+
+#course-list h1 {
+  padding-left: 25px;
+  padding-bottom: 20px;
+}
+
 .card>.card-body>:last-child {
   background-color: rgb(186, 200, 182);
+  border: none;
   width: 40%;
   padding: 3px ;
 }
@@ -163,16 +214,6 @@ p#description {
   max-width: 90%;
   max-height: 100%;
 }
-
-
-/* accordion */
-/* .accordion>li {
-  white-space: normal;
-} */
-
-
-
-
 
 /* 
 column row css
