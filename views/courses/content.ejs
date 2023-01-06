@@ -2,7 +2,7 @@
 <%- include('../scripts/addSection') %>
 <!<%- include('../partials/header', {active: "New" }) %>
 
-<h1>Now let's add some sections for: <strong> <%= course.title %></strong></h1>
+<h1>Now let's add some <strong> sections </strong></h1>
 <div class="creating-course-container">
   <form action="/courses/new/<%= course._id %>/content" method="post">
     <div class="sectionList">
@@ -36,7 +36,7 @@
             <p></p>
             <p>what <strong style="background-color: yellow;"> you see</strong > is what <strong style="background-color: yellow;">you get!</strong> <p>
             <p>on the bottom right of this toolbar you can drag and resize </p>
-            <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: darkolivegreen;"> If you already have an HTML ready to go click <u><strong>Tools</strong> </u>  and then click <u><strong>Source code</strong></u>  </p>
+            <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: darkolivegreen;"> If you already have an HTML ready to go, click <u><strong>Tools</strong> </u>  and then click <u><strong>Source code</strong></u>  </p>
             <p style="text-align: center;">Be sure to explore the toolbar!</p>
           </textarea>
         </div>
