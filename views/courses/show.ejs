@@ -1,8 +1,7 @@
 <!<%- include('../partials/header', {active: "" }) %>
 
-
 <div class="container-fluid banner">
-    <div class="container banner-container">
+    <div class="container banner">
         <div class="row">
             <div class="col">
                 <h1>
@@ -18,15 +17,14 @@
                     </li>
                 </ul>
             </div>
-            <p><%= course.welcomeMessage %></p>
-            <p><%= course.user.createdAt %></p>
-            <p><%= course.user.createdAt %></p>
+            <h5><%= course.welcomeMessage %></h5>
+            <p>Created: <%= course.createdAt %>
+            <br>
+            Updated: <%= course.updatedAt %>
+            </p>
         </div>
-
     </div>
 </div>
-
-
 
 <div class="container">
     <div class="row">
@@ -44,26 +42,12 @@
             <ul>
                 <h3>Description</h3>
                 <p id="description"> <%= course.description %></p>
-                <li>
-                    title: <%= course.title %>
-                </li>
-                <li>
-                    created user: <%= course.user._id %>
-                        email: <%= course.user.email %>
-                </li>
-                <li>
-                    logged in user: <%= user._id %>
-                        email: <%= user.email %>
-                </li>   
-
             </ul>
         </div>
     </div>
-
     <div class="row justify-content-md-center">
         <div class="col-4 border-bottom border-2 border-dark" style="--bs-border-opacity: .12;"></div>
     </div>
-    
     <div class="row">
         <div class="col">
             <% if (course.contents.length) { %>
@@ -119,8 +103,6 @@
     </form>
     <% } %>
 </div>
-
-
 
 <%- include('../partials/footer') %>
 
