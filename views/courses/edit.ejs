@@ -1,8 +1,7 @@
 <%- include('../partials/header', {active: "" }) %>
 
-<div>You can only change your title for now</div>
+<div>Edit your title</div>
 <div><%= course.title %> awd</div>
-<%= course.id %> <%= course._id %>
 
 <div class="creating-course-container">
   <form action="/courses/<%= course.id %>?_method=PUT" method="post">

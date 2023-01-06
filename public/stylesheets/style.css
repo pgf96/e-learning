@@ -96,7 +96,7 @@ p.title-message {
 /* home banner */
 main>.banner-home {
   background-color: #f3f3ef;
-  min-height: 1000px;
+  min-height: 850px;
 }
 
 .banner-home>.container>.row:not(#banner-home-buttons) {
@@ -120,13 +120,14 @@ main>.banner-home {
 }
 
 .banner-home>.container>.row h5 {
+  padding-top: 30px;
   text-align: left;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .banner-home>.container>.row img {
-  margin-top: 95px;
+  margin-top: 65px;
   width: 90%;
   border: 0px;
   border-radius: 3px 60px / 60px;
