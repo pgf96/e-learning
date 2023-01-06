@@ -41,7 +41,6 @@
     <h1>explore our courses</h1>
     <div class="row row-cols-3 gy-4">
       <!-- add card group -->
-
       <% courses.forEach(c=> { %>
       <div class="col d-flex justify-content-center">
         <div class="card display">
@@ -66,6 +65,16 @@
       </div>
       <% }) %>
     </div>
+    <% if (!courses.length) { %>
+    <br />
+    <div class="col-12 d-flex justify-content-end">
+      <img
+        style="width: 80%"
+        src="https://static.displate.com/857x1200/displate/2021-04-03/b3d4db426daf2effc431d54b026b90d3_cb54726c41c437f0c15762fcb528a422.jpg"
+        alt="..."
+      />
+    </div>
+    <% } %>
   </div>
 </div>
 <%- include('../partials/footer') %>
