@@ -8,7 +8,7 @@
 ![](public/images/sample-course.jpg)
 
 ## Built with
-Expressjs, MongoDB, Bootstrap, JavaScript, HTML, CSS, TinyMCE, Google Authentication
+Node, Expressjs, MongoDB, Mongoose, Bootstrap, JavaScript, HTML, CSS, TinyMCE, Google Authentication
 
 ## Getting Started
 Open the link in Google Chrome. ([e-learning](https://odenproject.herokuapp.com/courses)).
