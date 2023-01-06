@@ -1,9 +1,44 @@
 <%- include('../partials/header', {active: "Index" }) %>
 
-<h1>welcome to ..</h1>
+<div class="container-fluid banner-home d-flex align-items-center">
+  <div class="container">
+    <div class="row gx-4 row-cols-3 justify-content-start overflow-hidden">
+      <div class="col-7">
+        <h1>
+          Learn from the Best and Become an Expert in Your Field with Our
+          Courses
+        </h1>
+        <h5>
+          Design and host your own courses, or discover a world of knowledge
+          with our selection.
+        </h5>
+      </div>
+      <div class="col-5">
+        <div class="row">
+          <img
+            class="img-fluid"
+            src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="row gx-4 row-cols-3 justify-content-md-center align-items-end overflow-hidden"
+      id="banner-home-buttons"
+    >
+      <div class="col d-flex justify-content-center">
+        <a href="/courses/new" class="btn btn-primary" id="banner-home-button"
+          >Create Your Course</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
 
-<div class="container">
+<div class="container" id="course-list">
   <div class="card-group">
+    <h1>explore our courses</h1>
     <div class="row row-cols-3 gy-4">
       <!-- add card group -->
 
