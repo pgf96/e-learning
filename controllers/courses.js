@@ -85,6 +85,10 @@ const update = (req, res) => {
   })
 }
 
+const disclaimer = (req, res) => {
+  res.render("courses/disclaimer")
+}
+
 module.exports = {
   index,
   new: newCourse,
@@ -95,4 +99,5 @@ module.exports = {
   delete: deleteCourse,
   edit,
   update,
+  disclaimer,
 }

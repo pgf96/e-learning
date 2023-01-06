@@ -6,6 +6,7 @@ const isLoggedIn = require("../config/auth")
 router.get("/", coursesCtrl.index)
 router.get("/new", isLoggedIn, coursesCtrl.new)
 router.get("/new/:id/content", coursesCtrl.newContent)
+router.get("/disclaimer", coursesCtrl.disclaimer)
 
 router.get("/:id", isLoggedIn, coursesCtrl.show)
 
